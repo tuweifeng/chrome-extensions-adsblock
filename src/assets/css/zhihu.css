@@ -1,0 +1,21 @@
+.css-1ynzxqw,
+.Modal-wrapper,
+.Question-mainColumnLogin,
+.Question-main>div:nth-child(2),
+.Search-container>div:nth-child(3) {
+    /* visibility: hidden !important; */
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    z-index: -1 !important;
+}
+
+.Question-mainColumn,
+.Question-main>div:nth-child(1),
+.Search-container>div:nth-child(2) {
+    width: 100% !important;
+}
+
+html {
+    overflow: scroll !important;
+}

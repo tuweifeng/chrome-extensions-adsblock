@@ -1,18 +1,8 @@
 {
-    "name": "music163",
-    "description": "轻量、快速、安全, 支持批量下载歌单",
+    "name": "adsblock",
+    "description": "优化一些🇨🇳网站的广告体验",
     "version": "1.0",
     "manifest_version": 3,
-    "background": {
-        "service_worker": "./background.js"
-    },
-    "permissions": [
-        "downloads",
-        "notifications"
-    ],
-    "action": {
-        "default_popup": "./popup.html"
-    },
     "icons": {
         "128": "./assets/icon/icon128.png",
         "16": "./assets/icon/icon16.png",
@@ -20,16 +10,45 @@
     },
     "content_scripts": [
         {
-            "js": [
-                "./content.js"
-            ],
             "matches": [
-                "*://music.163.com/*"
+                "*://www.zhihu.com/*"
             ],
-            "run_at": "document_end"
+            "run_at": "document_start",
+            "css": [
+                "./assets/css/zhihu.css"
+            ],
+            "all_frames": true
+        },
+        {
+            "matches": [
+                "*://cn.bing.com/*"
+            ],
+            "run_at": "document_start",
+            "css": [
+                "./assets/css/bing.css"
+            ],
+            "all_frames": true
+        },
+        {
+            "matches": [
+                "*://www.o8tv.com/*",
+                "*://www.555hd3.com/*"
+            ],
+            "run_at": "document_start",
+            "css": [
+                "./assets/css/o8tv.css"
+            ],
+            "all_frames": true
+        },
+        {
+            "matches": [
+                "*://blog.csdn.net/*"
+            ],
+            "run_at": "document_start",
+            "css": [
+                "./assets/css/csdn.css"
+            ],
+            "all_frames": true
         }
-    ],
-    "host_permissions": [
-        "*://music.163.com/*"
     ]
 }
