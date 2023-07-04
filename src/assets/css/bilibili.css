@@ -1,0 +1,13 @@
+.bili-video-card:has(.bili-video-card__info--ad),
+.floor-single-card:has(.living),
+.bili-live-card,
+.ad-report,
+#reco_list,
+#activity_vote,
+.pop-live-small-mode,
+#danmukuBox {
+    /* visibility: hidden !important; */
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}

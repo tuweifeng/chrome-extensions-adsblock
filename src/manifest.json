@@ -8,6 +8,16 @@
         "16": "./assets/icon/icon16.png",
         "48": "./assets/icon/icon48.png"
     },
+    "background": {
+        "service_worker": "./background.js"
+    },
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "permissions": [
+        "downloads",
+        "notifications"
+    ],
     "content_scripts": [
         {
             "matches": [
@@ -16,6 +26,16 @@
             "run_at": "document_start",
             "css": [
                 "./assets/css/zhihu.css"
+            ],
+            "all_frames": true
+        },
+        {
+            "matches": [
+                "*://www.bilibili.com/*"
+            ],
+            "run_at": "document_start",
+            "css": [
+                "./assets/css/bilibili.css"
             ],
             "all_frames": true
         },
